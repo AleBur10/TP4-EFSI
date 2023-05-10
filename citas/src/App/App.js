@@ -11,7 +11,7 @@ function App() {
           <div class="one-half column">
             <h2>Crear mi Cita</h2>
             <form>
-              <label>Nombre Mascota</label>
+              <Nombres className="NombreMascota" NombreMascota="Nombre Mascota" />
               <input type="text" name="mascota" class="u-full-width" placeholder="Nombre Mascota" value=""></input>
               
               <label>Nombre Dueño</label>
