@@ -11,8 +11,7 @@ body {
   padding-bottom: 5rem;
 }
 
-h1,
-h2 {
+.Titulos {
   color: white;
   padding: 3rem 0;
   text-align: center;

@@ -1,57 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
 import Titulos from '../Titulos/Titulos'
+import Inputs from '../Inputs/Inputs';
+import Cards from '../Cards/Cards';
 
 function App() {
   return (
 <div className="App">
-      <Titulos className="Titulos" Titulo="ADMINISTRADOR DE PACIENTES" />
+      <Titulos className="Titulos" Size={'h1'} Titulo="ADMINISTRADOR DE PACIENTES" />
       <div class="container">
         <div class="row">
           <div class="one-half column">
-            <h2>Crear mi Cita</h2>
+            <Titulos Size={'h2'} className="Titulos" Titulo="Crear mi cita" />
             <form>
-              <Nombres className="NombreMascota" NombreMascota="Nombre Mascota" />
-              <input type="text" name="mascota" class="u-full-width" placeholder="Nombre Mascota" value=""></input>
+              <Inputs label="Nombre Mascota" type="text" holder="Nombre Mascota" />
               
-              <label>Nombre Dueño</label>
-              <input type="text" name="propietario" class="u-full-width" placeholder="Nombre dueño de la mascota" value=""></input>
+              <Inputs label="Nombre del dueño" type="text" holder="Nombre dueño de la mascota" />
               
-              <label>Fecha</label>
-              <input type="date" name="fecha" class="u-full-width" value=""></input>
+              <Inputs label="Fecha" type="date" holder="Fecha" />
               
-              <label>hora</label>
-              <input type="time" name="hora" class="u-full-width" value=""></input>
+              <Inputs label="Hora" type="time" holder="Hora" />
               
-              <label>Sintomas</label>
-              <textarea name="sintomas" class="u-full-width"></textarea>
+              <Inputs label="Sintomas" type="textarea" holder="" />
               
               <button type="submit" class="u-full-width button-primary">Agregar Cita</button>
               </form>
           </div>
           <div class="one-half column">
-            <h2>Administra tus citas</h2>
-            <div class="cita">
-              <p>Mascota: <span>Nina</span></p>
-              <p>Dueño: <span>Martin</span></p>
-              <p>Fecha: <span>2021-08-05</span></p>
-              <p>Hora: <span>08:20</span></p>
-              <p>Sintomas: <span>Le duele la pierna</span></p><button class="button elimnar u-full-width">Eliminar ×</button>
-            </div>
-            <div class="cita">
-              <p>Mascota: <span>Sifon</span></p>
-              <p>Dueño: <span>Flecha</span></p>
-              <p>Fecha: <span>2023-08-05</span></p>
-              <p>Hora: <span>09:24</span></p>
-              <p>Sintomas: <span>Duerme mucho</span></p><button class="button elimnar u-full-width">Eliminar ×</button>
-            </div>
-            <div class="cita">
-              <p>Mascota: <span>Floki</span></p>
-              <p>Dueño: <span>Ari</span></p>
-              <p>Fecha: <span>2023-08-05</span></p>
-              <p>Hora: <span>16:15</span></p>
-              <p>Sintomas: <span>No está comiendo</span></p><button class="button elimnar u-full-width">Eliminar ×</button>
-            </div>
+          <Titulos Size={'h2'} className="Titulos" Titulo="Administra tus citas" />
+            <Cards mascota="Nina" dueño="Martin" fecha="2021-08-05" hora="08:20" sintomas="Le duele la pierna" />
+            <Cards mascota="Sifon" dueño="Flecha" fecha="2023-08-05" hora="09:24" sintomas="Duerme mucho" />
+            <Cards mascota="Floki" dueño="Ari" fecha="2023-08-05" hora="16:15" sintomas="No está comiendo" />
           </div>
         </div>
       </div>

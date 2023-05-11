@@ -1,14 +1,10 @@
-function Nombres({NombreMascota, NombreDueño, Fecha, Hora, Sintomas}) {
+function Inputs(props) {
     return (
       <>
-          <p className="NombreMascota">{NombreMascota}</p>
-          <p className="NombreDueño">{NombreDueño}</p>
-          <p className="Fecha">{Fecha}</p>
-          <p className="Hora">{Hora}</p>
-          <p className="Sintomas">{Sintomas}</p>
+          <label>{props.label}</label>
+          <input className="u-full-width" type={props.type} placeholder={props.holder}></input>
       </>
     );
   }
   
-  export default Titulos;
-  
+  export default Inputs;
