@@ -1,9 +1,23 @@
+import { useState } from 'react';
 import './App.css';
 import Titulos from '../Titulos/Titulos'
 import Inputs from '../Inputs/Inputs';
 import Cards from '../Cards/Cards';
 
 function App() {
+  const [input, setInput] = useState('');
+  const [citas, setCitas] = useState([])
+  const agregarCita = evento => {
+    evento.preventDefault();
+    setCitas(
+      [
+        ...citas,
+        evento.target.input.value,
+      ]
+    );
+    evento.target.input.value = '';
+  }
+
   return (
 <div className="App">
       <Titulos className="Titulos" Size={'h1'} Titulo="ADMINISTRADOR DE PACIENTES" />
@@ -11,16 +25,16 @@ function App() {
         <div class="row">
           <div class="one-half column">
             <Titulos Size={'h2'} className="Titulos" Titulo="Crear mi cita" />
-            <form>
-              <Inputs label="Nombre Mascota" type="text" holder="Nombre Mascota" />
+            <form onSubmit={ (e)  => agregarCita(e)}>
+              <Inputs onKeyUp={(e) => setInput(e.target.value)} label="Nombre Mascota" type="text" holder="Nombre Mascota" />
               
-              <Inputs label="Nombre del dueño" type="text" holder="Nombre dueño de la mascota" />
+              <Inputs onKeyUp={(e) => setInput(e.target.value)} label="Nombre del dueño" type="text" holder="Nombre dueño de la mascota" />
               
-              <Inputs label="Fecha" type="date" holder="Fecha" />
+              <Inputs onKeyUp={(e) => setInput(e.target.value)} label="Fecha" type="date" holder="Fecha" />
               
-              <Inputs label="Hora" type="time" holder="Hora" />
+              <Inputs onKeyUp={(e) => setInput(e.target.value)} label="Hora" type="time" holder="Hora" />
               
-              <Inputs label="Sintomas" type="textarea" holder="" />
+              <Inputs onKeyUp={(e) => setInput(e.target.value)} label="Sintomas" type="textarea" holder="" />
               
               <button type="submit" class="u-full-width button-primary">Agregar Cita</button>
               </form>
