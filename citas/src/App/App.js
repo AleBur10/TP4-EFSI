@@ -7,24 +7,24 @@ import Cards from '../Cards/Cards';
 function App() {
   const [input, setInput] = useState('');
   const [citas, setCitas] = useState([])
-  const agregarCita = evento => {
-    evento.preventDefault();
+  const agregarCita = (e) => {
+    e.preventDefault();
     setCitas(
       [
         ...citas,
-        evento.target.input.value,
+        e.target.input.value,
       ]
     );
-    evento.target.input.value = '';
+    e.target.input.value = '';
   }
 
   return (
 <div className="App">
       <Titulos className="Titulos" Size={'h1'} Titulo="ADMINISTRADOR DE PACIENTES" />
-      <div class="container">
-        <div class="row">
-          <div class="one-half column">
-            <Titulos Size={'h2'} className="Titulos" Titulo="Crear mi cita" />
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
+            <Titulos Size={'h2'} classNameName="Titulos" Titulo="Crear mi cita" />
             <form onSubmit={ (e)  => agregarCita(e)}>
               <Inputs onKeyUp={(e) => setInput(e.target.value)} label="Nombre Mascota" type="text" holder="Nombre Mascota" />
               
@@ -36,10 +36,10 @@ function App() {
               
               <Inputs onKeyUp={(e) => setInput(e.target.value)} label="Sintomas" type="textarea" holder="" />
               
-              <button type="submit" class="u-full-width button-primary">Agregar Cita</button>
+              <button type="submit" className="u-full-width button-primary">Agregar Cita</button>
               </form>
           </div>
-          <div class="one-half column">
+          <div className="one-half column">
           <Titulos Size={'h2'} className="Titulos" Titulo="Administra tus citas" />
             <Cards mascota="Nina" dueño="Martin" fecha="2021-08-05" hora="08:20" sintomas="Le duele la pierna" />
             <Cards mascota="Sifon" dueño="Flecha" fecha="2023-08-05" hora="09:24" sintomas="Duerme mucho" />
@@ -49,6 +49,7 @@ function App() {
       </div>
     </div>
   );
+
 }
 
 export default App;
