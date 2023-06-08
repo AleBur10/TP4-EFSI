@@ -1,12 +1,4 @@
 function Cards(props) {
-
-  const eliminarCita = () => {
-    let citas = props.getCitas();
-    props.setCitas(
-      citas.filter(cita => cita.id === props.id)
-    )
-  }
-
   return (
     <div className="cita">
       <p>Mascota: <span>{props.mascota}</span></p>
@@ -14,7 +6,7 @@ function Cards(props) {
       <p>Fecha: <span>{props.fecha}</span></p>
       <p>Hora: <span>{props.hora}</span></p>
       <p>Sintomas: <span>{props.sintomas}</span></p>
-      <button className="button elimnar u-full-width" onClick={eliminarCita} >Eliminar ×</button>
+      <button className="button elimnar u-full-width" onClick={() => props.eliminarCita(props.id)} >Eliminar ×</button>
     </div>
   );
 }
